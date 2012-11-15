@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35CC510859C6FF2DDEE84803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC546F25938546615138B7 /* main.m */; };
+		35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
+		35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
+		35CC51C69977800FB35460A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC51CCF2B247A59A1BA1A0 /* CoreGraphics.framework */; };
+		35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */; };
+		35CC53BBD5A3BF6292214000 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC512DBDFA1B8AF2699F8C /* Security.framework */; };
+		35CC54B715203EC50DC733F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC58FDF5F4537A5FD462C3 /* ViewController.m */; };
+		35CC55120C2C645A3491A980 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC568C17DE75F9F6F94FFC /* Default@2x.png */; };
+		35CC554309D619F16C051BB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */; };
+		35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */; };
+		35CC57122BE81A1B8A88FE1A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A045ACA339046B83239 /* Default.png */; };
+		35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
+		35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A0861E449C299E72D8B /* sourcer.bundle */; };
+		35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */; };
+		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
+		35CC5BFECD39ED49495DBDAF /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC5FCACEDF37AD62BB438C /* DropboxSDK.framework */; };
+		35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC561E04322138729EAD02 /* AppDelegate.m */; };
+		35CC5D15ECC21EC4DDBD11CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
+		35CC5E886A4C5E7672DC7DDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */; };
+		35CC5E94DD53B0FE45BC2764 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35CC52FD6CD6ACBE77391038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35CC59DBF85A6AE2FE3DB440 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35CC5548BB98675A1C0C4EC5;
+			remoteInfo = SourceCodeReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35CC50275810983DA733071B /* SourceCodeReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SourceCodeReader-Prefix.pch"; sourceTree = "<group>"; };
+		35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		35CC512DBDFA1B8AF2699F8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		35CC519F6F3C5AC29E043B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		35CC51A9222B1DDFFD66E280 /* SourceCodeReaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceCodeReaderTests.h; sourceTree = "<group>"; };
+		35CC51CCF2B247A59A1BA1A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceCodeReaderTests.m; sourceTree = "<group>"; };
+		35CC53B2C2B3B7797FA08291 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		35CC546F25938546615138B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		35CC54E971F555BE0915BDE3 /* SourceCodeReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReaderTests-Info.plist"; sourceTree = "<group>"; };
+		35CC561E04322138729EAD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		35CC565C05D466A77BCED885 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35CC568C17DE75F9F6F94FFC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		35CC585D525FB1E90CE823F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		35CC5880FA33F0D9F53EE70B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35CC58FDF5F4537A5FD462C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		35CC597B4D895C74E7B6BAAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35CC5A045ACA339046B83239 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		35CC5A0861E449C299E72D8B /* sourcer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = sourcer.bundle; path = ../../sourcer.bundle; sourceTree = "<group>"; };
+		35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
+		35CC5F70ED11E668510B1401 /* SourceCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35CC5F92FFC0684B42876047 /* SourceCodeReaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceCodeReaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35CC5FCACEDF37AD62BB438C /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "/Users/sdt5/Desktop/Dropbox/T-Academy/SDK/dropbox-ios-sdk-1.3.2/DropboxSDK.framework"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35CC5132F23A31CB9A105875 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC5E94DD53B0FE45BC2764 /* SenTestingKit.framework in Frameworks */,
+				35CC5D15ECC21EC4DDBD11CC /* UIKit.framework in Frameworks */,
+				35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CC5675FB049BDF4FCD04C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */,
+				35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */,
+				35CC51C69977800FB35460A1 /* CoreGraphics.framework in Frameworks */,
+				35CC53BBD5A3BF6292214000 /* Security.framework in Frameworks */,
+				35CC554309D619F16C051BB1 /* QuartzCore.framework in Frameworks */,
+				35CC5BFECD39ED49495DBDAF /* DropboxSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35CC5222076C899D24FD6FB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */,
+				35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */,
+				35CC546F25938546615138B7 /* main.m */,
+				35CC50275810983DA733071B /* SourceCodeReader-Prefix.pch */,
+				35CC5A045ACA339046B83239 /* Default.png */,
+				35CC568C17DE75F9F6F94FFC /* Default@2x.png */,
+				35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35CC538303A5819DB16A325D /* SourceCodeReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				35CC5F2F8906685A65E9FD56 /* Supporting Files */,
+				35CC51A9222B1DDFFD66E280 /* SourceCodeReaderTests.h */,
+				35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */,
+			);
+			path = SourceCodeReaderTests;
+			sourceTree = "<group>";
+		};
+		35CC56CEBF6B663E941D23BC /* SourceCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				35CC5222076C899D24FD6FB5 /* Supporting Files */,
+				35CC5B115C916DCFDAD39304 /* AppDelegate.h */,
+				35CC561E04322138729EAD02 /* AppDelegate.m */,
+				35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */,
+				35CC53B2C2B3B7797FA08291 /* ViewController.h */,
+				35CC58FDF5F4537A5FD462C3 /* ViewController.m */,
+				35CC5A0861E449C299E72D8B /* sourcer.bundle */,
+			);
+			path = SourceCodeReader;
+			sourceTree = "<group>";
+		};
+		35CC59465526A468D3DA185F = {
+			isa = PBXGroup;
+			children = (
+				35CC5A1F1D18529E2BBA49C4 /* Products */,
+				35CC5E7828D2CEBE9A58CAE7 /* Frameworks */,
+				35CC56CEBF6B663E941D23BC /* SourceCodeReader */,
+				35CC538303A5819DB16A325D /* SourceCodeReaderTests */,
+			);
+			sourceTree = "<group>";
+		};
+		35CC5A1F1D18529E2BBA49C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35CC5F70ED11E668510B1401 /* SourceCodeReader.app */,
+				35CC5F92FFC0684B42876047 /* SourceCodeReaderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35CC5E7828D2CEBE9A58CAE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35CC565C05D466A77BCED885 /* UIKit.framework */,
+				35CC585D525FB1E90CE823F2 /* Foundation.framework */,
+				35CC51CCF2B247A59A1BA1A0 /* CoreGraphics.framework */,
+				35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */,
+				35CC512DBDFA1B8AF2699F8C /* Security.framework */,
+				35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */,
+				35CC5FCACEDF37AD62BB438C /* DropboxSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35CC5F2F8906685A65E9FD56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35CC54E971F555BE0915BDE3 /* SourceCodeReaderTests-Info.plist */,
+				35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35CC5548BB98675A1C0C4EC5 /* SourceCodeReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35CC5CF53FF6592A4645F215 /* Build configuration list for PBXNativeTarget "SourceCodeReader" */;
+			buildPhases = (
+				35CC58C79F6A48B3FE17BDA4 /* Sources */,
+				35CC5675FB049BDF4FCD04C0 /* Frameworks */,
+				35CC5A701FF6AC26D1DF89B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SourceCodeReader;
+			productName = SourceCodeReader;
+			productReference = 35CC5F70ED11E668510B1401 /* SourceCodeReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		35CC5D0867D95377E4045D47 /* SourceCodeReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35CC549A82A2568E88ECEA84 /* Build configuration list for PBXNativeTarget "SourceCodeReaderTests" */;
+			buildPhases = (
+				35CC5ED04565D6547E58395F /* Sources */,
+				35CC5132F23A31CB9A105875 /* Frameworks */,
+				35CC5F7A2EE284DB20C1A2E0 /* Resources */,
+				35CC509E00F135B510282CFB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35CC5517C82ADE8AF788DB75 /* PBXTargetDependency */,
+			);
+			name = SourceCodeReaderTests;
+			productName = SourceCodeReaderTests;
+			productReference = 35CC5F92FFC0684B42876047 /* SourceCodeReaderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35CC59DBF85A6AE2FE3DB440 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 35CC53844691DE3E982830E1 /* Build configuration list for PBXProject "SourceCodeReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35CC59465526A468D3DA185F;
+			productRefGroup = 35CC5A1F1D18529E2BBA49C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35CC5548BB98675A1C0C4EC5 /* SourceCodeReader */,
+				35CC5D0867D95377E4045D47 /* SourceCodeReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35CC5A701FF6AC26D1DF89B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */,
+				35CC57122BE81A1B8A88FE1A /* Default.png in Resources */,
+				35CC55120C2C645A3491A980 /* Default@2x.png in Resources */,
+				35CC5E886A4C5E7672DC7DDC /* Default-568h@2x.png in Resources */,
+				35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */,
+				35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CC5F7A2EE284DB20C1A2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35CC509E00F135B510282CFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35CC58C79F6A48B3FE17BDA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC510859C6FF2DDEE84803 /* main.m in Sources */,
+				35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */,
+				35CC54B715203EC50DC733F9 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CC5ED04565D6547E58395F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35CC5517C82ADE8AF788DB75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35CC5548BB98675A1C0C4EC5 /* SourceCodeReader */;
+			targetProxy = 35CC52FD6CD6ACBE77391038 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35CC597B4D895C74E7B6BAAE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35CC5880FA33F0D9F53EE70B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35CC519F6F3C5AC29E043B11 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35CC53564C5905B9F62A6BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SourceCodeReader.app/SourceCodeReader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				INFOPLIST_FILE = "SourceCodeReaderTests/SourceCodeReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		35CC53C4F128F1AA7590121F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: tacademy student (R28C52K58Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "64401F33-7DCF-4444-A8AB-B95E89B967FF";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35CC571D9CC45904BABEFD7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: tacademy student (R28C52K58Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "64401F33-7DCF-4444-A8AB-B95E89B967FF";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		35CC5B301D5FC821DB20EEC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/../SDK/dropbox-ios-sdk-1.3.2\"/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		35CC5CA53D3E36100F4B00E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/../SDK/dropbox-ios-sdk-1.3.2\"/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		35CC5EA83586D7F3C0747867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SourceCodeReader.app/SourceCodeReader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				INFOPLIST_FILE = "SourceCodeReaderTests/SourceCodeReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35CC53844691DE3E982830E1 /* Build configuration list for PBXProject "SourceCodeReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CC53C4F128F1AA7590121F /* Release */,
+				35CC571D9CC45904BABEFD7D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35CC549A82A2568E88ECEA84 /* Build configuration list for PBXNativeTarget "SourceCodeReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CC5EA83586D7F3C0747867 /* Release */,
+				35CC53564C5905B9F62A6BBB /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35CC5CF53FF6592A4645F215 /* Build configuration list for PBXNativeTarget "SourceCodeReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CC5B301D5FC821DB20EEC3 /* Release */,
+				35CC5CA53D3E36100F4B00E1 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35CC59DBF85A6AE2FE3DB440 /* Project object */;
+}
