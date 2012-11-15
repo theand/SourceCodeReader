@@ -46,7 +46,7 @@
                                             <action selector="showSourceFile:" destination="2" id="bux-MO-Rzi"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Cloj" id="SPs-5I-gzn">
+                                    <barButtonItem title="Clojure" id="SPs-5I-gzn">
                                         <connections>
                                             <action selector="showSourceFile:" destination="2" id="Pcw-gg-6eU"/>
                                         </connections>
@@ -56,7 +56,7 @@
                                             <action selector="showSourceFile:" destination="2" id="pde-zA-en5"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Rb" id="BFe-VN-a2e">
+                                    <barButtonItem title="Ruby" id="BFe-VN-a2e">
                                         <connections>
                                             <action selector="showSourceFile:" destination="2" id="sTh-Ij-uLi"/>
                                         </connections>
@@ -66,29 +66,9 @@
                                             <action selector="showSourceFile:" destination="2" id="96g-Lp-Jik"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Py" id="E4l-LA-gxA">
+                                    <barButtonItem title="Python" id="E4l-LA-gxA">
                                         <connections>
                                             <action selector="showSourceFile:" destination="2" id="8nD-mY-NOU"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Box" id="ga5-bX-d78">
-                                        <connections>
-                                            <action selector="dropboxLink:" destination="2" id="wCX-Q8-hUi"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Up" id="7LS-oK-bub">
-                                        <connections>
-                                            <action selector="uploadToDropbox:" destination="2" id="vG9-yh-Ou5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Ls" id="HeU-Z1-3wK">
-                                        <connections>
-                                            <action selector="listDropbox:" destination="2" id="jfW-9s-f6r"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Down" id="Xmq-7F-21r">
-                                        <connections>
-                                            <action selector="downloadFileFromDropbox:" destination="2" id="bkY-FS-IPv"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -109,11 +89,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="downloadFileFromDropbox:"/>
-                <relationship kind="action" name="dropboxLink:"/>
-                <relationship kind="action" name="listDropbox:"/>
                 <relationship kind="action" name="showSourceFile:"/>
-                <relationship kind="action" name="uploadToDropbox:"/>
                 <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
