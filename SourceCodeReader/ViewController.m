@@ -9,15 +9,23 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "DropboxSDK/DropboxSDK.h"
+#import "SourcePickerController.h"
 
-@interface ViewController ()<DBRestClientDelegate>
-
+@interface ViewController ()<SourcePickerDelegate>
 @end
 
 
-@implementation ViewController
+@implementation ViewController {
+@private
+    UIPopoverController *_sourcePickerPopover;
+    SourcePickerController *_sourcePickerController;
+}
+
 @synthesize myWebView;
+@synthesize sourcePickerPopover = _sourcePickerPopover;
+@synthesize sourcePickerController = _sourcePickerController;
+
+
 
 #pragma mark Life Cycle
 - (void)viewDidLoad {
@@ -39,12 +47,25 @@
 }
 
 #pragma mark methods for source file view
-- (IBAction)showSourceFile:(id)sender {
-    UIBarButtonItem *i = (UIBarButtonItem *) sender;
-    NSString *bundlePath = [self getSourcerBundlePath];
-    [self loadSourceFilePath:bundlePath filePath:[NSString stringWithFormat:@"sample_output/%@.html", i.title]];
+
+- (IBAction)viewSourceList:(id)sender {
+    if (self.sourcePickerController == nil) {
+        self.sourcePickerController = [[SourcePickerController alloc] initWithStyle:UITableViewStylePlain];
+        self.sourcePickerController.delegate = self;
+        self.sourcePickerPopover = [[UIPopoverController alloc] initWithContentViewController:self.sourcePickerController] ;
+    }
+    [self.sourcePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
 }
 
+#pragma mark sourceListPickerDelegate
+
+- (void)sourceSelected:(NSString *)source {
+    [self loadSourceFilePath:[self getSourcerBundlePath]
+                    filePath:[NSString stringWithFormat:@"sample_output/%@.html", source]];
+
+    [self.sourcePickerPopover dismissPopoverAnimated:YES];
+}
 
 
 - (NSString *)getSourcerBundlePath {

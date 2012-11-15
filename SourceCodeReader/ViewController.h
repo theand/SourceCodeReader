@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class SourcePickerController;
+
 @interface ViewController : UIViewController{
 }
 @property (nonatomic, strong) IBOutlet UIWebView *myWebView;
-- (IBAction)showSourceFile:(id)sender;
+@property (nonatomic, strong) UIPopoverController *sourcePickerPopover;
+@property (nonatomic, strong) SourcePickerController *sourcePickerController;
+
+- (IBAction)viewSourceList:(id)sender;
 
 @end

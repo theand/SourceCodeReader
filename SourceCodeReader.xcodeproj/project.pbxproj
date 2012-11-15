@@ -19,6 +19,7 @@
 		35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */; };
 		35CC57122BE81A1B8A88FE1A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A045ACA339046B83239 /* Default.png */; };
 		35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
+		35CC58F8F856833206BAC371 /* SourcePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */; };
 		35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A0861E449C299E72D8B /* sourcer.bundle */; };
 		35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */; };
 		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
@@ -63,6 +64,8 @@
 		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
+		35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcePickerController.h; sourceTree = "<group>"; };
+		35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcePickerController.m; sourceTree = "<group>"; };
 		35CC5F70ED11E668510B1401 /* SourceCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CC5F92FFC0684B42876047 /* SourceCodeReaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceCodeReaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CC5FCACEDF37AD62BB438C /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "/Users/sdt5/Desktop/Dropbox/T-Academy/SDK/dropbox-ios-sdk-1.3.2/DropboxSDK.framework"; sourceTree = "<absolute>"; };
@@ -129,6 +132,8 @@
 				35CC53B2C2B3B7797FA08291 /* ViewController.h */,
 				35CC58FDF5F4537A5FD462C3 /* ViewController.m */,
 				35CC5A0861E449C299E72D8B /* sourcer.bundle */,
+				35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */,
+				35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */,
 			);
 			path = SourceCodeReader;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				35CC510859C6FF2DDEE84803 /* main.m in Sources */,
 				35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */,
 				35CC54B715203EC50DC733F9 /* ViewController.m in Sources */,
+				35CC58F8F856833206BAC371 /* SourcePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

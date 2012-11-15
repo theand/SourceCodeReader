@@ -21,54 +21,9 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RaJ-4L-qES">
                                 <rect key="frame" x="0.0" y="-1" width="768" height="44"/>
                                 <items>
-                                    <barButtonItem title="HTML" id="ZSd-At-PUB">
+                                    <barButtonItem title="Source List" id="lun-BA-cYv">
                                         <connections>
-                                            <action selector="showSourceFile:" destination="2" id="hX2-nt-QhS"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="CSS" id="HSk-LP-9wz">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="FVv-i4-kk6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="JS" id="vMA-8a-Jm6">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="FNB-Qa-jCc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Java" id="V42-ph-Rk6">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="Ccy-Od-9Ry"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Bash" id="Lbo-BT-ufc">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="bux-MO-Rzi"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Clojure" id="SPs-5I-gzn">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="Pcw-gg-6eU"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="PHP" id="u9T-6C-76I">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="pde-zA-en5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Ruby" id="BFe-VN-a2e">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="sTh-Ij-uLi"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="C" id="Wnq-bb-kAB">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="96g-Lp-Jik"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Python" id="E4l-LA-gxA">
-                                        <connections>
-                                            <action selector="showSourceFile:" destination="2" id="8nD-mY-NOU"/>
+                                            <action selector="viewSourceList:" destination="2" id="mkE-pe-a54"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -90,6 +45,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showSourceFile:"/>
+                <relationship kind="action" name="viewSourceList:"/>
                 <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
