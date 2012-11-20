@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DropboxSDK/DropboxSDK.h"
-#import "DZCategories.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

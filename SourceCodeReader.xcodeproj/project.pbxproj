@@ -54,6 +54,10 @@
 		332C76FC165A17BC00ED81CD /* icon_zip.png in Resources */ = {isa = PBXBuildFile; fileRef = 332C76EA165A17BC00ED81CD /* icon_zip.png */; };
 		332C76FD165A17BC00ED81CD /* logo_dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 332C76EB165A17BC00ED81CD /* logo_dropbox.png */; };
 		332C76FE165A17BC00ED81CD /* logo_dropbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 332C76EC165A17BC00ED81CD /* logo_dropbox@2x.png */; };
+		33D64298165B72720075481B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D64297165B72720075481B /* ImageIO.framework */; };
+		33D6429A165B72850075481B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D64299165B72850075481B /* libc++.dylib */; };
+		33D6429C165B728F0075481B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D6429B165B728F0075481B /* libz.dylib */; };
+		33D642AE165B77B60075481B /* libzipzap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D642AB165B777F0075481B /* libzipzap.a */; };
 		35CC510859C6FF2DDEE84803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC546F25938546615138B7 /* main.m */; };
 		35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
@@ -61,10 +65,8 @@
 		35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */; };
 		35CC53BBD5A3BF6292214000 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC512DBDFA1B8AF2699F8C /* Security.framework */; };
 		35CC54B715203EC50DC733F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC58FDF5F4537A5FD462C3 /* ViewController.m */; };
-		35CC55120C2C645A3491A980 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC568C17DE75F9F6F94FFC /* Default@2x.png */; };
 		35CC554309D619F16C051BB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */; };
 		35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */; };
-		35CC57122BE81A1B8A88FE1A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A045ACA339046B83239 /* Default.png */; };
 		35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
 		35CC58F8F856833206BAC371 /* SourcePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */; };
 		35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A0861E449C299E72D8B /* sourcer.bundle */; };
@@ -72,11 +74,31 @@
 		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
 		35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC561E04322138729EAD02 /* AppDelegate.m */; };
 		35CC5D15ECC21EC4DDBD11CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
-		35CC5E886A4C5E7672DC7DDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */; };
 		35CC5E94DD53B0FE45BC2764 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		33D642A8165B777F0075481B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33D6429F165B777E0075481B /* zipzap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CF82162C5EC100112F49;
+			remoteInfo = "zipzap (OS X)";
+		};
+		33D642AA165B777F0075481B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33D6429F165B777E0075481B /* zipzap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CFB0162C5EEB00112F49;
+			remoteInfo = "zipzap (iOS)";
+		};
+		33D642AC165B777F0075481B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33D6429F165B777E0075481B /* zipzap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CF96162C5EC100112F49;
+			remoteInfo = zipzapTests;
+		};
 		35CC52FD6CD6ACBE77391038 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 35CC59DBF85A6AE2FE3DB440 /* Project object */;
@@ -152,6 +174,10 @@
 		332C76EA165A17BC00ED81CD /* icon_zip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_zip.png; sourceTree = "<group>"; };
 		332C76EB165A17BC00ED81CD /* logo_dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dropbox.png; sourceTree = "<group>"; };
 		332C76EC165A17BC00ED81CD /* logo_dropbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_dropbox@2x.png"; sourceTree = "<group>"; };
+		33D64297165B72720075481B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		33D64299165B72850075481B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		33D6429B165B728F0075481B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		33D6429F165B777E0075481B /* zipzap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = zipzap.xcodeproj; path = zipzap/zipzap.xcodeproj; sourceTree = "<group>"; };
 		35CC50275810983DA733071B /* SourceCodeReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SourceCodeReader-Prefix.pch"; sourceTree = "<group>"; };
 		35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		35CC512DBDFA1B8AF2699F8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -164,16 +190,13 @@
 		35CC54E971F555BE0915BDE3 /* SourceCodeReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReaderTests-Info.plist"; sourceTree = "<group>"; };
 		35CC561E04322138729EAD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		35CC565C05D466A77BCED885 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		35CC568C17DE75F9F6F94FFC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		35CC585D525FB1E90CE823F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35CC5880FA33F0D9F53EE70B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CC58FDF5F4537A5FD462C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		35CC597B4D895C74E7B6BAAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		35CC5A045ACA339046B83239 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		35CC5A0861E449C299E72D8B /* sourcer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = sourcer.bundle; path = ../../sourcer.bundle; sourceTree = "<group>"; };
 		35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
 		35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcePickerController.h; sourceTree = "<group>"; };
 		35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcePickerController.m; sourceTree = "<group>"; };
@@ -196,6 +219,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D642AE165B77B60075481B /* libzipzap.a in Frameworks */,
+				33D6429C165B728F0075481B /* libz.dylib in Frameworks */,
+				33D6429A165B72850075481B /* libc++.dylib in Frameworks */,
+				33D64298165B72720075481B /* ImageIO.framework in Frameworks */,
 				332C76D1165A15B500ED81CD /* DropboxSDK.framework in Frameworks */,
 				35CC554309D619F16C051BB1 /* QuartzCore.framework in Frameworks */,
 				332C76971659FEFA00ED81CD /* MobileCoreServices.framework in Frameworks */,
@@ -290,6 +317,16 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		33D642A0165B777E0075481B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33D642A9165B777F0075481B /* libzipzap.a */,
+				33D642AB165B777F0075481B /* libzipzap.a */,
+				33D642AD165B777F0075481B /* zipzapTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		35CC5222076C899D24FD6FB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,9 +334,6 @@
 				35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */,
 				35CC546F25938546615138B7 /* main.m */,
 				35CC50275810983DA733071B /* SourceCodeReader-Prefix.pch */,
-				35CC5A045ACA339046B83239 /* Default.png */,
-				35CC568C17DE75F9F6F94FFC /* Default@2x.png */,
-				35CC5C05DFEBCB06A748FE69 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -348,6 +382,7 @@
 		35CC59465526A468D3DA185F = {
 			isa = PBXGroup;
 			children = (
+				33D6429F165B777E0075481B /* zipzap.xcodeproj */,
 				35CC5962BCB8DC4F6C9BC832 /* DZDocumentsPickerController */,
 				35CC5A1F1D18529E2BBA49C4 /* Products */,
 				35CC5E7828D2CEBE9A58CAE7 /* Frameworks */,
@@ -406,6 +441,9 @@
 		35CC5E7828D2CEBE9A58CAE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33D6429B165B728F0075481B /* libz.dylib */,
+				33D64299165B72850075481B /* libc++.dylib */,
+				33D64297165B72720075481B /* ImageIO.framework */,
 				332C76D0165A15B500ED81CD /* DropboxSDK.framework */,
 				332C76961659FEF900ED81CD /* MobileCoreServices.framework */,
 				332C76721659FE5900ED81CD /* SystemConfiguration.framework */,
@@ -483,6 +521,12 @@
 			mainGroup = 35CC59465526A468D3DA185F;
 			productRefGroup = 35CC5A1F1D18529E2BBA49C4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 33D642A0165B777E0075481B /* Products */;
+					ProjectRef = 33D6429F165B777E0075481B /* zipzap.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				35CC5548BB98675A1C0C4EC5 /* SourceCodeReader */,
@@ -491,15 +535,36 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		33D642A9165B777F0075481B /* libzipzap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libzipzap.a;
+			remoteRef = 33D642A8165B777F0075481B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33D642AB165B777F0075481B /* libzipzap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libzipzap.a;
+			remoteRef = 33D642AA165B777F0075481B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33D642AD165B777F0075481B /* zipzapTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = zipzapTests.octest;
+			remoteRef = 33D642AC165B777F0075481B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		35CC5A701FF6AC26D1DF89B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */,
-				35CC57122BE81A1B8A88FE1A /* Default.png in Resources */,
-				35CC55120C2C645A3491A980 /* Default@2x.png in Resources */,
-				35CC5E886A4C5E7672DC7DDC /* Default-568h@2x.png in Resources */,
 				35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */,
 				35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */,
 				332C75E11659F83E00ED81CD /* blackArrow.png in Resources */,
@@ -715,7 +780,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../zipzap;
 				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -733,7 +803,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../zipzap;
 				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DropboxSDK/DropboxSDK.h"
-
 
 @interface AppDelegate() <DBSessionDelegate>
 @end

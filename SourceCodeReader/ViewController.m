@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
-#import "AppDelegate.h"
 #import "DZDocumentsPickerController.h"
+#import <zipzap/zipzap.h>
 
 @interface ViewController () <SourcePickerDelegate, DZDocumentsPickerControllerDelegate>
 @end
@@ -31,6 +31,13 @@
     [super viewDidLoad];
 
     [self clearAllCache];
+    
+    ZZArchive *a;
+
+//    ZZArchive* oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:@"/tmp/old.zip"]];
+//    ZZArchiveEntry* firstArchiveEntry = oldArchive.entries[0];
+//    DebugLog(@"The first entry's uncompressed size is %d bytes.", firstArchiveEntry.uncompressedSize);
+//    DebugLog(@"The first entry's data is: %@.", firstArchiveEntry.data);
 
 }
 
