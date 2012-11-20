@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(150.0, 280.0);
+    self.contentSizeForViewInPopover = CGSizeMake(150.0, 480.0);
 
     self.sources = [NSMutableArray array];
     [self.sources addObject:@"HTML"];

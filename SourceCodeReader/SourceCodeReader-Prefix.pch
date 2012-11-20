@@ -13,6 +13,9 @@
 
     #import <Foundation/Foundation.h>
 
+    #import "DZCategories.h"
+
+
 #endif
 
 

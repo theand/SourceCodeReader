@@ -13,9 +13,9 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="Kzz-4A-cyu">
+                            <webView alpha="0.90000000000000002" contentMode="scaleToFill" id="Kzz-4A-cyu">
                                 <rect key="frame" x="0.0" y="43" width="768" height="961"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294118225574493" green="0.15686275064945221" blue="0.13333334028720856" alpha="1" colorSpace="deviceRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RaJ-4L-qES">
@@ -24,6 +24,11 @@
                                     <barButtonItem title="Source List" id="lun-BA-cYv">
                                         <connections>
                                             <action selector="viewSourceList:" destination="2" id="mkE-pe-a54"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Dropbox" id="Znp-BT-quv">
+                                        <connections>
+                                            <action selector="goDropbox:" destination="2" id="mkB-PD-Ebd"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -44,7 +49,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="showSourceFile:"/>
+                <relationship kind="action" name="goDropbox:"/>
                 <relationship kind="action" name="viewSourceList:"/>
                 <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>

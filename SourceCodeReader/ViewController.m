@@ -6,24 +6,23 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <DropboxSDK/DropboxSDK.h>
 #import "ViewController.h"
+#import <DropboxSDK/DropboxSDK.h>
 #import "AppDelegate.h"
-#import "SourcePickerController.h"
+#import "DZDocumentsPickerController.h"
 
-@interface ViewController ()<SourcePickerDelegate>
+@interface ViewController () <SourcePickerDelegate, DZDocumentsPickerControllerDelegate>
 @end
 
 
 @implementation ViewController {
-@private
-    UIPopoverController *_sourcePickerPopover;
-    SourcePickerController *_sourcePickerController;
 }
 
 @synthesize myWebView;
-@synthesize sourcePickerPopover = _sourcePickerPopover;
-@synthesize sourcePickerController = _sourcePickerController;
+@synthesize sourcePickerPopover ;
+@synthesize sourcePickerController ;
+@synthesize docPickerController ;
+@synthesize docPickerPopOverController ;
 
 
 
@@ -52,11 +51,60 @@
     if (self.sourcePickerController == nil) {
         self.sourcePickerController = [[SourcePickerController alloc] initWithStyle:UITableViewStylePlain];
         self.sourcePickerController.delegate = self;
-        self.sourcePickerPopover = [[UIPopoverController alloc] initWithContentViewController:self.sourcePickerController] ;
+        self.sourcePickerPopover = [[UIPopoverController alloc] initWithContentViewController:self.sourcePickerController];
     }
     [self.sourcePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
 }
+
+- (IBAction)goDropbox:(id)sender {
+    if( docPickerController == nil){
+        docPickerController = [[DZDocumentsPickerController alloc] init];
+        docPickerController.includePhotoLibrary = NO;
+        docPickerController.documentType = DocumentTypeZip;
+        docPickerController.allowEditing = NO;
+        docPickerController.delegate = self;
+        docPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox],nil];
+
+        [docPickerController setContentSizeForViewInPopover:CGSizeMake(400, 600)];
+        docPickerController.deviceType = DeviceTypeiPad;
+        docPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:docPickerController];
+    }
+
+    [docPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+}
+
+
+#pragma mark - UIDocumentsPickerControllerDelegate Methods
+
+- (void)documentPickerController:(DZDocumentsPickerController *)picker didFinishPickingFileWithInfo:(NSDictionary *)info
+{
+    if (info)
+    {
+        if (picker.documentType == DocumentTypeZip ||
+                picker.documentType == DocumentTypeAll)
+        {
+            NSData *data = [info objectForKey:@"file"];
+//            UIImage *file = [UIImage imageWithData:data];
+            //NSString *extension = [info objectForKey:@"extension"];
+            //NSString *name = [info objectForKey:@"name"];
+            NSLog(@"data = %@",data);
+//            imgview.image = [file imageByScalingProportionallyToSize:imgview.frame.size];
+        }
+    }
+
+    [docPickerPopOverController dismissPopoverAnimated:YES];
+}
+
+- (void)dismissPickerController:(DZDocumentsPickerController *)picker
+{
+    NSLog(@"%s",__FUNCTION__);
+
+    [docPickerPopOverController dismissPopoverAnimated:YES];
+}
+
+
 
 #pragma mark sourceListPickerDelegate
 

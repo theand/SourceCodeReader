@@ -9,23 +9,41 @@
 #import "AppDelegate.h"
 #import "DropboxSDK/DropboxSDK.h"
 
+
+@interface AppDelegate() <DBSessionDelegate>
+@end
+
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *appKey = @"d42rw8ccbrt8cxh";
-    NSString *appSecret = @"h4na6nerl3r85o1";
-    NSString *root = kDBRootDropbox;
+@synthesize dbSession, relinkUserId;
 
-    DBSession *dbSession =
-            [[DBSession alloc]
-                    initWithAppKey:appKey
-                         appSecret:appSecret
-                              root:root];
-    [DBSession setSharedSession:dbSession];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self startDropboxSession];
 
     return YES;
 }
 
+#pragma - mark Dropbox
+- (void)startDropboxSession {
+    NSString *appKey = @"d42rw8ccbrt8cxh";
+    NSString *appSecret = @"h4na6nerl3r85o1";
+    NSString *root = kDBRootDropbox;
+
+    dbSession = nil;
+    dbSession = [[DBSession alloc]
+                    initWithAppKey:appKey appSecret:appSecret root:root];
+    dbSession.delegate = self;
+    [DBSession setSharedSession:dbSession];
+}
+
+
+- (void)sessionDidReceiveAuthorizationFailure:(DBSession *)session userId:(NSString *)userId
+{
+    relinkUserId = userId;
+    [[[UIAlertView alloc] initWithTitle:@"Dropbox Error" message:@"An error was produced. Please try in a little while." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+#pragma - mark life cycle
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
