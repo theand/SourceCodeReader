@@ -1,0 +1,56 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    background: #272822;/* TODO from okadia */
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0em 0;
+}
+/*
+ol.lncode { margin: 15px 0; padding: 0 0 0 20px; background: #e8e8e8; border: 1px solid #ccc; line-height: 100%; font: normal 12px Courier, monospace; }
+ol.lncode li { margin: 0 0 0 20px; padding: 5px 10px 5px 10px; list-style: decimal-leading-zero; line-height: 100%; word-wrap: break-word; border-left: 1px solid #ccc; color: #999; background: #fff; }
+ol.lncode li pre { display: block; margin: 0; padding: 0; color: #333; }
+*/

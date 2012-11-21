@@ -59,6 +59,7 @@
 		33EC2FA8165B83D70085EDC9 /* icon_zip.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EC2F28165B83D70085EDC9 /* icon_zip.png */; };
 		33EC2FAD165B83D70085EDC9 /* logo_dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EC2F2D165B83D70085EDC9 /* logo_dropbox.png */; };
 		33EC2FAE165B83D70085EDC9 /* logo_dropbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EC2F2E165B83D70085EDC9 /* logo_dropbox@2x.png */; };
+		33F5966F165C94A100764C86 /* sourcer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33F5966E165C94A100764C86 /* sourcer.bundle */; };
 		35CC510859C6FF2DDEE84803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC546F25938546615138B7 /* main.m */; };
 		35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
@@ -70,7 +71,6 @@
 		35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */; };
 		35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
 		35CC58F8F856833206BAC371 /* SourcePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */; };
-		35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5A0861E449C299E72D8B /* sourcer.bundle */; };
 		35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */; };
 		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
 		35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC561E04322138729EAD02 /* AppDelegate.m */; };
@@ -188,6 +188,7 @@
 		33EC2F28165B83D70085EDC9 /* icon_zip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_zip.png; sourceTree = "<group>"; };
 		33EC2F2D165B83D70085EDC9 /* logo_dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dropbox.png; sourceTree = "<group>"; };
 		33EC2F2E165B83D70085EDC9 /* logo_dropbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_dropbox@2x.png"; sourceTree = "<group>"; };
+		33F5966E165C94A100764C86 /* sourcer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sourcer.bundle; sourceTree = SOURCE_ROOT; };
 		35CC50275810983DA733071B /* SourceCodeReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SourceCodeReader-Prefix.pch"; sourceTree = "<group>"; };
 		35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		35CC512DBDFA1B8AF2699F8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -204,7 +205,6 @@
 		35CC5880FA33F0D9F53EE70B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CC58FDF5F4537A5FD462C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		35CC597B4D895C74E7B6BAAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		35CC5A0861E449C299E72D8B /* sourcer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = sourcer.bundle; path = ../../sourcer.bundle; sourceTree = "<group>"; };
 		35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33EC2E78165B83D70085EDC9 /* Source */ = {
+		33EC2E78165B83D70085EDC9 /* DZDocumentPicker */ = {
 			isa = PBXGroup;
 			children = (
 				33EC2E79165B83D70085EDC9 /* Assets */,
@@ -276,7 +276,7 @@
 				33EC2E88165B83D70085EDC9 /* External */,
 				33EC2F18165B83D70085EDC9 /* images */,
 			);
-			name = Source;
+			name = DZDocumentPicker;
 			path = DZDocumentsPickerController/Source;
 			sourceTree = "<group>";
 		};
@@ -440,13 +440,13 @@
 		35CC56CEBF6B663E941D23BC /* SourceCodeReader */ = {
 			isa = PBXGroup;
 			children = (
+				33F5966E165C94A100764C86 /* sourcer.bundle */,
 				35CC5222076C899D24FD6FB5 /* Supporting Files */,
 				35CC5B115C916DCFDAD39304 /* AppDelegate.h */,
 				35CC561E04322138729EAD02 /* AppDelegate.m */,
 				35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */,
 				35CC53B2C2B3B7797FA08291 /* ViewController.h */,
 				35CC58FDF5F4537A5FD462C3 /* ViewController.m */,
-				35CC5A0861E449C299E72D8B /* sourcer.bundle */,
 				35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */,
 				35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */,
 			);
@@ -456,7 +456,7 @@
 		35CC59465526A468D3DA185F = {
 			isa = PBXGroup;
 			children = (
-				33EC2E78165B83D70085EDC9 /* Source */,
+				33EC2E78165B83D70085EDC9 /* DZDocumentPicker */,
 				33D6429F165B777E0075481B /* zipzap.xcodeproj */,
 				35CC5A1F1D18529E2BBA49C4 /* Products */,
 				35CC5E7828D2CEBE9A58CAE7 /* Frameworks */,
@@ -603,7 +603,6 @@
 			files = (
 				35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */,
 				35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */,
-				35CC5941B780E3C6FA4D85B6 /* sourcer.bundle in Resources */,
 				33EC2F46165B83D70085EDC9 /* Cloud-Settings.plist in Resources */,
 				33EC2F90165B83D70085EDC9 /* blackArrow.png in Resources */,
 				33EC2F91165B83D70085EDC9 /* blackArrow@2x.png in Resources */,
@@ -631,6 +630,7 @@
 				33EC2FA8165B83D70085EDC9 /* icon_zip.png in Resources */,
 				33EC2FAD165B83D70085EDC9 /* logo_dropbox.png in Resources */,
 				33EC2FAE165B83D70085EDC9 /* logo_dropbox@2x.png in Resources */,
+				33F5966F165C94A100764C86 /* sourcer.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
