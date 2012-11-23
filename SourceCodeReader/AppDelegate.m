@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate() <DBSessionDelegate>
+@interface AppDelegate () <DBSessionDelegate>
+
 @end
 
 @implementation AppDelegate
@@ -29,14 +30,13 @@
 
     dbSession = nil;
     dbSession = [[DBSession alloc]
-                    initWithAppKey:appKey appSecret:appSecret root:root];
+            initWithAppKey:appKey appSecret:appSecret root:root];
     dbSession.delegate = self;
     [DBSession setSharedSession:dbSession];
 }
 
 
-- (void)sessionDidReceiveAuthorizationFailure:(DBSession *)session userId:(NSString *)userId
-{
+- (void)sessionDidReceiveAuthorizationFailure:(DBSession *)session userId:(NSString *)userId {
     relinkUserId = userId;
     [[[UIAlertView alloc] initWithTitle:@"Dropbox Error" message:@"An error was produced. Please try in a little while." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
@@ -72,7 +72,7 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     if ([[DBSession sharedSession] handleOpenURL:url]) {
         if ([[DBSession sharedSession] isLinked]) {
-            NSLog(@"App linked successfully!");
+            DebugLog(@"App linked successfully!");
             // At this point you can start making API calls
         }
         return YES;

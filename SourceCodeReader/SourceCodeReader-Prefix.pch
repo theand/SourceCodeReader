@@ -9,11 +9,12 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
 
-    #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-    #import "DZCategories.h"
+#import <Foundation/Foundation.h>
+
+#import "DZCategories.h"
 
 
 #endif
@@ -22,7 +23,11 @@
 #define DEBUG_MODE
 
 #ifdef DEBUG_MODE
-#define DebugLog( s, ... ) NSLog( @"<%@:%s(%d) >\n\t%@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], sel_getName(_cmd), __LINE__,  [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define DebugLog( s, ... ) NSLog( @"DEBUG> [%@ : %s(%d)]\n\t%@", \
+    [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
+    sel_getName(_cmd), \
+    __LINE__,  \
+    [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 #else
     #define DebugLog( s, ... )
 #endif

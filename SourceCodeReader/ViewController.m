@@ -12,6 +12,7 @@
 #import <zipzap/zipzap.h>
 
 @interface ViewController () <SourcePickerDelegate, DZDocumentsPickerControllerDelegate>
+
 @end
 
 
@@ -19,10 +20,14 @@
 }
 
 @synthesize myWebView;
-@synthesize sourcePickerPopover ;
-@synthesize sourcePickerController ;
-@synthesize docPickerController ;
-@synthesize docPickerPopOverController ;
+
+@synthesize sourcePickerPopover;
+
+@synthesize sourcePickerController;
+
+@synthesize docPickerController;
+
+@synthesize docPickerPopOverController;
 
 
 
@@ -31,7 +36,7 @@
     [super viewDidLoad];
 
     [self clearAllCache];
-    
+
     ZZArchive *a;
 
 //    ZZArchive* oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:@"/tmp/old.zip"]];
@@ -65,13 +70,13 @@
 }
 
 - (IBAction)goDropbox:(id)sender {
-    if( docPickerController == nil){
+    if (docPickerController == nil) {
         docPickerController = [[DZDocumentsPickerController alloc] init];
         docPickerController.includePhotoLibrary = NO;
         docPickerController.documentType = DocumentTypeZip;
         docPickerController.allowEditing = NO;
         docPickerController.delegate = self;
-        docPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox],nil];
+        docPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox], nil];
 
         [docPickerController setContentSizeForViewInPopover:CGSizeMake(400, 600)];
         docPickerController.deviceType = DeviceTypeiPad;
@@ -85,18 +90,15 @@
 
 #pragma mark - UIDocumentsPickerControllerDelegate Methods
 
-- (void)documentPickerController:(DZDocumentsPickerController *)picker didFinishPickingFileWithInfo:(NSDictionary *)info
-{
-    if (info)
-    {
+- (void)documentPickerController:(DZDocumentsPickerController *)picker didFinishPickingFileWithInfo:(NSDictionary *)info {
+    if (info) {
         if (picker.documentType == DocumentTypeZip ||
-                picker.documentType == DocumentTypeAll)
-        {
+                picker.documentType == DocumentTypeAll) {
             NSData *data = [info objectForKey:@"file"];
 //            UIImage *file = [UIImage imageWithData:data];
             //NSString *extension = [info objectForKey:@"extension"];
             //NSString *name = [info objectForKey:@"name"];
-            NSLog(@"data = %@",data);
+            DebugLog(@"data = %@", data);
 //            imgview.image = [file imageByScalingProportionallyToSize:imgview.frame.size];
         }
     }
@@ -104,9 +106,8 @@
     [docPickerPopOverController dismissPopoverAnimated:YES];
 }
 
-- (void)dismissPickerController:(DZDocumentsPickerController *)picker
-{
-    NSLog(@"%s",__FUNCTION__);
+- (void)dismissPickerController:(DZDocumentsPickerController *)picker {
+    DebugLog(@"");
 
     [docPickerPopOverController dismissPopoverAnimated:YES];
 }
