@@ -37,13 +37,49 @@
 
     [self clearAllCache];
 
-    ZZArchive *a;
+//    [self testZipRead];
+    [self testExtract];
+}
 
-//    ZZArchive* oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:@"/tmp/old.zip"]];
-//    ZZArchiveEntry* firstArchiveEntry = oldArchive.entries[0];
-//    DebugLog(@"The first entry's uncompressed size is %d bytes.", firstArchiveEntry.uncompressedSize);
-//    DebugLog(@"The first entry's data is: %@.", firstArchiveEntry.data);
 
+- (void)testZipRead {
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CoreDataUtility.zip"];
+
+    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
+    ZZArchiveEntry *firstArchiveEntry = oldArchive.entries[2];
+    DebugLog(@"filename : %@", firstArchiveEntry.fileName);
+    DebugLog(@"The first entry's uncompressed size is %d bytes.", firstArchiveEntry.uncompressedSize);
+    DebugLog(@"The first entry's data is: %@.", firstArchiveEntry.data);
+
+
+}
+
+- (void)testExtract {
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CoreDataUtility.zip"];
+    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
+
+    NSString *pathForDocument = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSURL *dirPath = nil;
+
+    for ( ZZArchiveEntry *entry in oldArchive.entries){
+        NSString *fileType=nil;
+        NSError *theError = nil;
+        if( entry.fileMode & S_IFDIR){
+            fileType = @"DIR";
+            if( ![fm createDirectoryAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] withIntermediateDirectories:YES attributes:nil error:&theError] ){
+                DebugLog(@"ERROR!!!!!!!! : %@", theError.localizedDescription);
+            }
+        }else if( entry.fileMode & S_IFREG){
+            fileType = @"REGULAR";
+            if( ![fm createFileAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] contents:entry.data attributes:nil]){
+                DebugLog(@"ERROR!! createFile");
+            }
+        }else{
+            fileType = @"WTF!";
+        }
+        DebugLog(@"filename : %@ - %d bytes - %x - %@", entry.fileName, entry.uncompressedSize, entry.fileMode, fileType);
+    }
 }
 
 
