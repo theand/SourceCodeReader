@@ -38,7 +38,7 @@
     [self clearAllCache];
 
 //    [self testZipRead];
-    [self testExtract];
+//    [self testExtract];
 }
 
 
@@ -55,33 +55,52 @@
 }
 
 - (void)testExtract {
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CoreDataUtility.zip"];
-    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
 
     NSString *pathForDocument = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSURL *dirPath = nil;
 
-    for ( ZZArchiveEntry *entry in oldArchive.entries){
-        NSString *fileType=nil;
+    NSString *path = [pathForDocument stringByAppendingPathComponent:@"import/highlight.zip"];
+    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
+
+
+    for (ZZArchiveEntry *entry in oldArchive.entries) {
+        NSString *fileType = nil;
         NSError *theError = nil;
-        if( entry.fileMode & S_IFDIR){
+        if (entry.fileMode & S_IFDIR) {
             fileType = @"DIR";
-            if( ![fm createDirectoryAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] withIntermediateDirectories:YES attributes:nil error:&theError] ){
-                DebugLog(@"ERROR!!!!!!!! : %@", theError.localizedDescription);
+            if (![fm createDirectoryAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] withIntermediateDirectories:YES attributes:nil error:&theError]) {
+                DebugLog(@"ERROR!! in createDirectory : %@", theError.localizedDescription);
             }
-        }else if( entry.fileMode & S_IFREG){
+        } else if (entry.fileMode & S_IFREG) {
             fileType = @"REGULAR";
-            if( ![fm createFileAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] contents:entry.data attributes:nil]){
-                DebugLog(@"ERROR!! createFile");
+            [self checkForIntermediatePath:[pathForDocument stringByAppendingPathComponent:entry.fileName]];
+            if (![fm createFileAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] contents:entry.data attributes:nil]) {
+                DebugLog(@"ERROR!! in createFile - %@", [pathForDocument stringByAppendingPathComponent:entry.fileName] );
             }
+        } else if ( entry.fileMode &  S_IFMT){
+            fileType = @"S_IFMT";
+
+        } else if ( entry.fileMode & S_IFIFO){
+            fileType = @"S_IFIFO";
+
+        } else if ( entry.fileMode & S_IFCHR){
+            fileType = @"S_IFCHR";
+
+        } else if ( entry.fileMode & S_IFBLK){
+            fileType = @"S_IFBLK";
+
+        } else if ( entry.fileMode & S_IFLNK){
+            fileType = @"S_IFLNK";
+
+        } else if ( entry.fileMode & S_IFSOCK){
+            fileType = @"S_IFSOCK";
+
         }else{
-            fileType = @"WTF!";
+            fileType = @"What Is It!";
         }
         DebugLog(@"filename : %@ - %d bytes - %x - %@", entry.fileName, entry.uncompressedSize, entry.fileMode, fileType);
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -131,16 +150,110 @@
         if (picker.documentType == DocumentTypeZip ||
                 picker.documentType == DocumentTypeAll) {
             NSData *data = [info objectForKey:@"file"];
-//            UIImage *file = [UIImage imageWithData:data];
-            //NSString *extension = [info objectForKey:@"extension"];
-            //NSString *name = [info objectForKey:@"name"];
-            DebugLog(@"data = %@", data);
-//            imgview.image = [file imageByScalingProportionallyToSize:imgview.frame.size];
+            NSString *extension = [info objectForKey:@"extension"];
+            NSString *name = [info objectForKey:@"name"];
+
+            NSString *zipPath = [self saveToImportDirectory:data extension:extension name:name];
+            [self extractToProject:zipPath];
+
+            //TODO done notice - HUD progress?
         }
     }
 
     [docPickerPopOverController dismissPopoverAnimated:YES];
 }
+
+- (void)extractToProject:(NSString *)zipPath {
+    ZZArchive *zipArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:zipPath]];
+
+    NSString *pathForProject = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"Project"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+
+    for (ZZArchiveEntry *entry in zipArchive.entries) {
+        NSString *fileType = nil;
+        NSError *theError = nil;
+        NSString *entryPath = [pathForProject stringByAppendingPathComponent:entry.fileName];
+
+        if (entry.fileMode & S_IFDIR) {
+            fileType = @"DIR";
+            if (![fm createDirectoryAtPath:entryPath withIntermediateDirectories:YES attributes:nil error:&theError]) {
+                DebugLog(@"ERROR!! in createDirectory : %@", theError.localizedDescription);
+            }
+        } else if (entry.fileMode & S_IFREG) {
+            fileType = @"REGULAR";
+            [self checkForIntermediatePath:entryPath];
+            if (![fm createFileAtPath:entryPath contents:entry.data attributes:nil]) {
+
+                DebugLog(@"ERROR!! in createFile - %@", entryPath );
+            }
+        } else if ( entry.fileMode &  S_IFMT){
+            fileType = @"S_IFMT";
+
+        } else if ( entry.fileMode & S_IFIFO){
+            fileType = @"S_IFIFO";
+
+        } else if ( entry.fileMode & S_IFCHR){
+            fileType = @"S_IFCHR";
+
+        } else if ( entry.fileMode & S_IFBLK){
+            fileType = @"S_IFBLK";
+
+        } else if ( entry.fileMode & S_IFLNK){
+            fileType = @"S_IFLNK";
+
+        } else if ( entry.fileMode & S_IFSOCK){
+            fileType = @"S_IFSOCK";
+
+        }else{
+            fileType = @"What Is It!";
+        }
+        DebugLog(@"filename : %@ - %d bytes - %s - %@", entry.fileName, entry.uncompressedSize, [self intToBinary:entry.fileMode], fileType);
+    }
+}
+
+- (char *)intToBinary:(int) i {
+    static char s[32 + 1] = { '0', };
+    int count = 32;
+
+    do { s[--count] = '0' + (char) (i & 1);
+        i = i >> 1;
+    } while (count);
+
+    return s;
+}
+
+- (NSString *)saveToImportDirectory:(NSData *)data extension:(NSString *)extension name:(NSString *)name {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+
+    NSString *fileName = [NSString stringWithFormat:@"import/%@.%@", name, extension];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    DebugLog(@"filePath saving: %@", filePath);
+    [data writeToFile:filePath atomically:YES];
+    return filePath;
+}
+
+
+- (void)checkForIntermediatePath:(NSString *)path {
+    NSMutableArray *components = [NSMutableArray arrayWithArray:[path pathComponents]];
+    if ([components count] <2){
+        return;
+    }
+    [components removeLastObject];
+    NSString *containingDirectory = [NSString pathWithComponents:components];
+    DebugLog(@"containgFolder: %@", containingDirectory);
+    NSFileManager *fm = [NSFileManager defaultManager];
+    BOOL isDirExists = [fm fileExistsAtPath:containingDirectory];
+    DebugLog(@"isDirExists : %d", isDirExists);
+    if( !isDirExists){
+        NSError *theError = nil;
+        if (![fm createDirectoryAtPath:containingDirectory withIntermediateDirectories:YES attributes:nil error:&theError]) {
+            DebugLog(@"ERROR!! in createDirectory : %@", theError.localizedDescription);
+        }
+
+    }
+}
+
 
 - (void)dismissPickerController:(DZDocumentsPickerController *)picker {
     DebugLog(@"");

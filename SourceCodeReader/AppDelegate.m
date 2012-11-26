@@ -18,9 +18,62 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self startDropboxSession];
+    [self checkImportDir];
+    [self checkProjectDir];
 
     return YES;
 }
+
+#pragma mark - Documents/import Directory check
+- (void)checkImportDir {
+    NSString *documentsDirectory = [self getDocumentsPath];
+    NSString *importDirectory = [documentsDirectory stringByAppendingPathComponent:@"import"];
+
+    BOOL dirExists = [self directoryExistsAtAbsolutePath:importDirectory];
+    if ( dirExists){
+        DebugLog(@"importDir already exists");
+    }else{
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm createDirectoryAtPath:importDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        DebugLog(@"importDir created!");
+    }
+}
+
+- (void)checkProjectDir {
+    NSString *documentsDirectory = [self getDocumentsPath];
+    NSString *projectDirectory = [documentsDirectory stringByAppendingPathComponent:@"Project"];
+
+    BOOL dirExists = [self directoryExistsAtAbsolutePath:projectDirectory];
+    if ( dirExists){
+        DebugLog(@"projectDir already exists");
+    }else{
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm createDirectoryAtPath:projectDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        DebugLog(@"projectDir created!");
+    }
+}
+
+
+- (NSString *)getDocumentsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+-(BOOL)fileExistsAtAbsolutePath:(NSString*)filename {
+    BOOL isDirectory;
+    BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory];
+
+    return fileExistsAtPath && !isDirectory;
+}
+
+-(BOOL)directoryExistsAtAbsolutePath:(NSString*)filename {
+    BOOL isDirectory;
+    BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory];
+
+    return fileExistsAtPath && isDirectory;
+}
+
 
 #pragma - mark Dropbox
 - (void)startDropboxSession {
