@@ -31,75 +31,12 @@
 
 
 
-#pragma mark Life Cycle
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self clearAllCache];
 
-//    [self testZipRead];
-//    [self testExtract];
-}
-
-
-- (void)testZipRead {
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CoreDataUtility.zip"];
-
-    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
-    ZZArchiveEntry *firstArchiveEntry = oldArchive.entries[2];
-    DebugLog(@"filename : %@", firstArchiveEntry.fileName);
-    DebugLog(@"The first entry's uncompressed size is %d bytes.", firstArchiveEntry.uncompressedSize);
-    DebugLog(@"The first entry's data is: %@.", firstArchiveEntry.data);
-
-
-}
-
-- (void)testExtract {
-
-    NSString *pathForDocument = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSFileManager *fm = [NSFileManager defaultManager];
-
-    NSString *path = [pathForDocument stringByAppendingPathComponent:@"import/highlight.zip"];
-    ZZArchive *oldArchive = [ZZArchive archiveWithContentsOfURL:[NSURL fileURLWithPath:path]];
-
-
-    for (ZZArchiveEntry *entry in oldArchive.entries) {
-        NSString *fileType = nil;
-        NSError *theError = nil;
-        if (entry.fileMode & S_IFDIR) {
-            fileType = @"DIR";
-            if (![fm createDirectoryAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] withIntermediateDirectories:YES attributes:nil error:&theError]) {
-                DebugLog(@"ERROR!! in createDirectory : %@", theError.localizedDescription);
-            }
-        } else if (entry.fileMode & S_IFREG) {
-            fileType = @"REGULAR";
-            [self checkForIntermediatePath:[pathForDocument stringByAppendingPathComponent:entry.fileName]];
-            if (![fm createFileAtPath:[pathForDocument stringByAppendingPathComponent:entry.fileName] contents:entry.data attributes:nil]) {
-                DebugLog(@"ERROR!! in createFile - %@", [pathForDocument stringByAppendingPathComponent:entry.fileName] );
-            }
-        } else if ( entry.fileMode &  S_IFMT){
-            fileType = @"S_IFMT";
-
-        } else if ( entry.fileMode & S_IFIFO){
-            fileType = @"S_IFIFO";
-
-        } else if ( entry.fileMode & S_IFCHR){
-            fileType = @"S_IFCHR";
-
-        } else if ( entry.fileMode & S_IFBLK){
-            fileType = @"S_IFBLK";
-
-        } else if ( entry.fileMode & S_IFLNK){
-            fileType = @"S_IFLNK";
-
-        } else if ( entry.fileMode & S_IFSOCK){
-            fileType = @"S_IFSOCK";
-
-        }else{
-            fileType = @"What Is It!";
-        }
-        DebugLog(@"filename : %@ - %d bytes - %x - %@", entry.fileName, entry.uncompressedSize, entry.fileMode, fileType);
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,6 +106,7 @@
     NSString *pathForProject = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"Project"];
     NSFileManager *fm = [NSFileManager defaultManager];
 
+    //TODO 압축 파일 이름으로 먼저 디렉토리를 만드는게 나을듯?
     for (ZZArchiveEntry *entry in zipArchive.entries) {
         NSString *fileType = nil;
         NSError *theError = nil;
@@ -181,11 +119,7 @@
             }
         } else if (entry.fileMode & S_IFREG) {
             fileType = @"REGULAR";
-            [self checkForIntermediatePath:entryPath];
-            if (![fm createFileAtPath:entryPath contents:entry.data attributes:nil]) {
-
-                DebugLog(@"ERROR!! in createFile - %@", entryPath );
-            }
+            [self saveEntryToProject:fm entry:entry entryPath:entryPath];
         } else if ( entry.fileMode &  S_IFMT){
             fileType = @"S_IFMT";
 
@@ -206,6 +140,8 @@
 
         }else{
             fileType = @"What Is It!";
+            [self saveEntryToProject:fm entry:entry entryPath:entryPath];
+            //TODO 여기에 오는 애들 뭔지 모르겠다.
         }
         DebugLog(@"filename : %@ - %d bytes - %s - %@", entry.fileName, entry.uncompressedSize, [self intToBinary:entry.fileMode], fileType);
     }
@@ -233,6 +169,13 @@
     return filePath;
 }
 
+- (void)saveEntryToProject:(NSFileManager *)fm entry:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath {
+    [self checkForIntermediatePath:entryPath];
+    if (![fm createFileAtPath:entryPath contents:entry.data attributes:nil]) {
+
+        DebugLog(@"ERROR!! in createFile - %@", entryPath );
+    }
+}
 
 - (void)checkForIntermediatePath:(NSString *)path {
     NSMutableArray *components = [NSMutableArray arrayWithArray:[path pathComponents]];
