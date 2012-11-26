@@ -17,6 +17,8 @@
 #import "DZCategories.h"
 
 
+#import "NSObject+Theand.h"
+
 #endif
 
 

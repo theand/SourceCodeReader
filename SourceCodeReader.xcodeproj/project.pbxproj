@@ -64,6 +64,7 @@
 		35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC51C69977800FB35460A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC51CCF2B247A59A1BA1A0 /* CoreGraphics.framework */; };
+		35CC52CC8C8DFAB1F18BD6F1 /* NSObject+Theand.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5C29B21D162CF4166262 /* NSObject+Theand.m */; };
 		35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */; };
 		35CC53BBD5A3BF6292214000 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC512DBDFA1B8AF2699F8C /* Security.framework */; };
 		35CC54B715203EC50DC733F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC58FDF5F4537A5FD462C3 /* ViewController.m */; };
@@ -75,6 +76,7 @@
 		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
 		35CC5C8C76AFAC62385EDB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC561E04322138729EAD02 /* AppDelegate.m */; };
 		35CC5D15ECC21EC4DDBD11CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
+		35CC5D2464D7A46BDB7DCAE5 /* ZipHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5561378DEBCBE84D2C3D /* ZipHandler.m */; };
 		35CC5E94DD53B0FE45BC2764 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC509DB2E28085E738DCB9 /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,14 +200,18 @@
 		35CC53B2C2B3B7797FA08291 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		35CC546F25938546615138B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		35CC54E971F555BE0915BDE3 /* SourceCodeReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReaderTests-Info.plist"; sourceTree = "<group>"; };
+		35CC5561378DEBCBE84D2C3D /* ZipHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipHandler.m; sourceTree = "<group>"; };
 		35CC561E04322138729EAD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		35CC565C05D466A77BCED885 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35CC57047A1CCD451A723B19 /* ZipHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipHandler.h; sourceTree = "<group>"; };
 		35CC585D525FB1E90CE823F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35CC5880FA33F0D9F53EE70B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CC58FDF5F4537A5FD462C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		35CC597B4D895C74E7B6BAAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		35CC5C29B21D162CF4166262 /* NSObject+Theand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Theand.m"; sourceTree = "<group>"; };
+		35CC5C53FFE4CA981A0CB34B /* NSObject+Theand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Theand.h"; sourceTree = "<group>"; };
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
 		35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcePickerController.h; sourceTree = "<group>"; };
 		35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcePickerController.m; sourceTree = "<group>"; };
@@ -448,6 +454,10 @@
 				35CC58FDF5F4537A5FD462C3 /* ViewController.m */,
 				35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */,
 				35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */,
+				35CC5C53FFE4CA981A0CB34B /* NSObject+Theand.h */,
+				35CC5C29B21D162CF4166262 /* NSObject+Theand.m */,
+				35CC5561378DEBCBE84D2C3D /* ZipHandler.m */,
+				35CC57047A1CCD451A723B19 /* ZipHandler.h */,
 			);
 			path = SourceCodeReader;
 			sourceTree = "<group>";
@@ -684,6 +694,8 @@
 				33EC2F57165B83D70085EDC9 /* UIWebView+DZEN.m in Sources */,
 				33EC2F65165B83D70085EDC9 /* Reachability.m in Sources */,
 				33EC2F8F165B83D70085EDC9 /* EGORefreshTableHeaderView.m in Sources */,
+				35CC52CC8C8DFAB1F18BD6F1 /* NSObject+Theand.m in Sources */,
+				35CC5D2464D7A46BDB7DCAE5 /* ZipHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +837,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/zipzap\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -848,6 +861,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/zipzap\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
