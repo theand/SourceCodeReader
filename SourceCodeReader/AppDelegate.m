@@ -39,8 +39,8 @@
 
 #pragma - mark Dropbox
 - (void)startDropboxSession {
-    NSString *appKey = @"d42rw8ccbrt8cxh";
-    NSString *appSecret = @"h4na6nerl3r85o1";
+    NSString *appKey = @"xw31basq9ljaouo";
+    NSString *appSecret = @"nhg0iaky979ugfb";
     NSString *root = kDBRootDropbox;
 
     dbSession = nil;
