@@ -892,6 +892,7 @@
 				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../zipzap;
 				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -917,6 +918,7 @@
 				GCC_PREFIX_HEADER = "SourceCodeReader/SourceCodeReader-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../zipzap;
 				INFOPLIST_FILE = "SourceCodeReader/SourceCodeReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

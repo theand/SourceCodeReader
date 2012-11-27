@@ -23,14 +23,19 @@
                                 <rect key="frame" x="0.0" y="-1" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Source List" id="lun-BA-cYv">
+                                    <barButtonItem title="Samples" id="lun-BA-cYv">
                                         <connections>
                                             <action selector="viewSourceList:" destination="2" id="mkE-pe-a54"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Dropbox" id="Znp-BT-quv">
+                                    <barButtonItem title="Import" id="Znp-BT-quv">
                                         <connections>
                                             <action selector="goDropbox:" destination="2" id="mkB-PD-Ebd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Projects" id="MgU-Z5-2kQ">
+                                        <connections>
+                                            <action selector="viewProjectDirectory:" destination="2" id="Dey-8F-4K4"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -52,6 +57,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="goDropbox:"/>
+                <relationship kind="action" name="viewProjectDirectory:"/>
                 <relationship kind="action" name="viewSourceList:"/>
                 <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>
