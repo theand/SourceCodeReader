@@ -10,6 +10,7 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import "DZDocumentsPickerController.h"
 #import "ZipHandler.h"
+#import "KOTreeViewController.h"
 #import <zipzap/zipzap.h>
 
 @interface ViewController () <SourcePickerDelegate, DZDocumentsPickerControllerDelegate>
@@ -22,11 +23,14 @@
 
 @synthesize myWebView;
 
-@synthesize sourcePickerPopover;
 @synthesize sourcePickerController;
+@synthesize sourcePickerPopOverController;
 
-@synthesize docPickerController;
-@synthesize docPickerPopOverController;
+@synthesize dropboxPickerController;
+@synthesize dropboxPickerPopOverController;
+
+@synthesize projectPickerController;
+@synthesize projectPickerPopOverController;
 
 
 
@@ -42,11 +46,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 
-    sourcePickerPopover = nil;
+    sourcePickerPopOverController = nil;
     sourcePickerController = nil;
 
-    docPickerController = nil;
-    docPickerPopOverController = nil;
+    dropboxPickerController = nil;
+    dropboxPickerPopOverController = nil;
+
+    projectPickerController = nil;
+    projectPickerPopOverController = nil;
+
 }
 
 
@@ -64,38 +72,43 @@
 #pragma mark methods for source file view
 
 - (IBAction)viewSourceList:(id)sender {
-    if (self.sourcePickerController == nil) {
-        self.sourcePickerController = [[SourcePickerController alloc] initWithStyle:UITableViewStylePlain];
-        self.sourcePickerController.delegate = self;
-        self.sourcePickerPopover = [[UIPopoverController alloc] initWithContentViewController:self.sourcePickerController];
+    if (sourcePickerController == nil) {
+        sourcePickerController = [[SourcePickerController alloc] initWithStyle:UITableViewStylePlain];
+        sourcePickerController.delegate = self;
+        sourcePickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:sourcePickerController];
     }
-    [self.sourcePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [sourcePickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
 }
 
 - (IBAction)goDropbox:(id)sender {
-    if (docPickerController == nil) {
-        docPickerController = [[DZDocumentsPickerController alloc] init];
-        docPickerController.includePhotoLibrary = NO;
-        docPickerController.documentType = DocumentTypeZip;
-        docPickerController.allowEditing = NO;
-        docPickerController.delegate = self;
-        docPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox], nil];
+    if (dropboxPickerController == nil) {
+        dropboxPickerController = [[DZDocumentsPickerController alloc] init];
+        dropboxPickerController.includePhotoLibrary = NO;
+        dropboxPickerController.documentType = DocumentTypeZip;
+        dropboxPickerController.allowEditing = NO;
+        dropboxPickerController.delegate = self;
+        dropboxPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox], nil];
 
-        [docPickerController setContentSizeForViewInPopover:CGSizeMake(400, 600)];
-        docPickerController.deviceType = DeviceTypeiPad;
-        docPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:docPickerController];
+        [dropboxPickerController setContentSizeForViewInPopover:CGSizeMake(400, 600)];
+        dropboxPickerController.deviceType = DeviceTypeiPad;
+        dropboxPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:dropboxPickerController];
     }
 
-    [docPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [dropboxPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
 }
 
 - (IBAction)viewProjectDirectory:(id)sender {
+    if (projectPickerController == nil) {
+        projectPickerController = [[KOTreeViewController alloc] init];
+        projectPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:projectPickerController];
+    }
+    [projectPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 
-#pragma mark - UIDocumentsPickerControllerDelegate Methods
+#pragma mark - DZDocumentsPickerControllerDelegate Methods
 
 - (void)documentPickerController:(DZDocumentsPickerController *)picker didFinishPickingFileWithInfo:(NSDictionary *)info {
     if (info) {
@@ -112,14 +125,14 @@
         }
     }
 
-    [docPickerPopOverController dismissPopoverAnimated:YES];
+    [dropboxPickerPopOverController dismissPopoverAnimated:YES];
 }
 
 
 - (void)dismissPickerController:(DZDocumentsPickerController *)picker {
     DebugLog(@"");
 
-    [docPickerPopOverController dismissPopoverAnimated:YES];
+    [dropboxPickerPopOverController dismissPopoverAnimated:YES];
 }
 
 
@@ -130,7 +143,7 @@
     [self loadSourceFilePath:[self getSourcerBundlePath]
                     filePath:[NSString stringWithFormat:@"sample_output/%@.html", source]];
 
-    [self.sourcePickerPopover dismissPopoverAnimated:YES];
+    [sourcePickerPopOverController dismissPopoverAnimated:YES];
 }
 
 
