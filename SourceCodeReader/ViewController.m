@@ -54,6 +54,13 @@
     [super viewDidUnload];
 }
 
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+
 #pragma mark methods for source file view
 
 - (IBAction)viewSourceList:(id)sender {

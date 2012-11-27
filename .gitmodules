@@ -4,3 +4,6 @@
 [submodule "DZDocumentsPickerController"]
 	path = DZDocumentsPickerController
 	url = https://github.com/theand/DZDocumentsPickerController.git
+[submodule "KOTree"]
+	path = KOTree
+	url = https://github.com/theand/KOTree.git

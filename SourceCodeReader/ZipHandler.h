@@ -14,7 +14,7 @@
 
 + (NSString *)saveToImportDirectory:(NSData *)data extension:(NSString *)extension name:(NSString *)name;
 + (void)extractToProjectFromZip:(NSString *)zipPath;
-+ (void)saveRegularFileToProject:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath;
++ (BOOL)saveRegularFileToProject:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath;
 
 
 @end

@@ -15,11 +15,13 @@
                         <subviews>
                             <webView alpha="0.80000000000000004" contentMode="scaleToFill" id="Kzz-4A-cyu">
                                 <rect key="frame" x="0.0" y="43" width="768" height="961"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15294118225574493" green="0.15686275064945221" blue="0.13333334028720856" alpha="1" colorSpace="deviceRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RaJ-4L-qES">
                                 <rect key="frame" x="0.0" y="-1" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem title="Source List" id="lun-BA-cYv">
                                         <connections>
@@ -45,6 +47,16 @@
             <point key="canvasLocation" x="-14" y="-164"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goDropbox:"/>
+                <relationship kind="action" name="viewSourceList:"/>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

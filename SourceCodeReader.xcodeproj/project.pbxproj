@@ -10,6 +10,16 @@
 		332C76701659FC2100ED81CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332C766F1659FC2100ED81CD /* CFNetwork.framework */; };
 		332C76731659FE5900ED81CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332C76721659FE5900ED81CD /* SystemConfiguration.framework */; };
 		332C76971659FEFA00ED81CD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332C76961659FEF900ED81CD /* MobileCoreServices.framework */; };
+		33C9F57B16648C3E009341A5 /* copymove-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F55E16648C3E009341A5 /* copymove-cell-bg.png */; };
+		33C9F57D16648C3E009341A5 /* item-counter.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56116648C3E009341A5 /* item-counter.png */; };
+		33C9F57E16648C3E009341A5 /* item-counter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56216648C3E009341A5 /* item-counter@2x.png */; };
+		33C9F57F16648C3E009341A5 /* item-icon-folder-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56316648C3E009341A5 /* item-icon-folder-selected.png */; };
+		33C9F58016648C3E009341A5 /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56416648C3E009341A5 /* item-icon-folder-selected@2x.png */; };
+		33C9F58116648C3E009341A5 /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56516648C3E009341A5 /* item-icon-folder.png */; };
+		33C9F58216648C3E009341A5 /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C9F56616648C3E009341A5 /* item-icon-folder@2x.png */; };
+		33C9F58516648C3E009341A5 /* KOTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C9F56C16648C3E009341A5 /* KOTreeItem.m */; };
+		33C9F58616648C3E009341A5 /* KOTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C9F56E16648C3E009341A5 /* KOTreeTableViewCell.m */; };
+		33C9F58716648C3E009341A5 /* KOTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C9F57016648C3E009341A5 /* KOTreeViewController.m */; };
 		33D64298165B72720075481B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D64297165B72720075481B /* ImageIO.framework */; };
 		33D6429A165B72850075481B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D64299165B72850075481B /* libc++.dylib */; };
 		33D6429C165B728F0075481B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D6429B165B728F0075481B /* libz.dylib */; };
@@ -115,6 +125,19 @@
 		332C766F1659FC2100ED81CD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		332C76721659FE5900ED81CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		332C76961659FEF900ED81CD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		33C9F55E16648C3E009341A5 /* copymove-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copymove-cell-bg.png"; sourceTree = "<group>"; };
+		33C9F56116648C3E009341A5 /* item-counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter.png"; sourceTree = "<group>"; };
+		33C9F56216648C3E009341A5 /* item-counter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter@2x.png"; sourceTree = "<group>"; };
+		33C9F56316648C3E009341A5 /* item-icon-folder-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected.png"; sourceTree = "<group>"; };
+		33C9F56416648C3E009341A5 /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
+		33C9F56516648C3E009341A5 /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
+		33C9F56616648C3E009341A5 /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
+		33C9F56B16648C3E009341A5 /* KOTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOTreeItem.h; sourceTree = "<group>"; };
+		33C9F56C16648C3E009341A5 /* KOTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOTreeItem.m; sourceTree = "<group>"; };
+		33C9F56D16648C3E009341A5 /* KOTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOTreeTableViewCell.h; sourceTree = "<group>"; };
+		33C9F56E16648C3E009341A5 /* KOTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOTreeTableViewCell.m; sourceTree = "<group>"; };
+		33C9F56F16648C3E009341A5 /* KOTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOTreeViewController.h; sourceTree = "<group>"; };
+		33C9F57016648C3E009341A5 /* KOTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOTreeViewController.m; sourceTree = "<group>"; };
 		33D64297165B72720075481B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		33D64299165B72850075481B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		33D6429B165B728F0075481B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -253,6 +276,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33C9F55C16648C3E009341A5 /* KOTree */ = {
+			isa = PBXGroup;
+			children = (
+				33C9F55D16648C3E009341A5 /* KOTree */,
+			);
+			path = KOTree;
+			sourceTree = "<group>";
+		};
+		33C9F55D16648C3E009341A5 /* KOTree */ = {
+			isa = PBXGroup;
+			children = (
+				33C9F55E16648C3E009341A5 /* copymove-cell-bg.png */,
+				33C9F56116648C3E009341A5 /* item-counter.png */,
+				33C9F56216648C3E009341A5 /* item-counter@2x.png */,
+				33C9F56316648C3E009341A5 /* item-icon-folder-selected.png */,
+				33C9F56416648C3E009341A5 /* item-icon-folder-selected@2x.png */,
+				33C9F56516648C3E009341A5 /* item-icon-folder.png */,
+				33C9F56616648C3E009341A5 /* item-icon-folder@2x.png */,
+				33C9F56B16648C3E009341A5 /* KOTreeItem.h */,
+				33C9F56C16648C3E009341A5 /* KOTreeItem.m */,
+				33C9F56D16648C3E009341A5 /* KOTreeTableViewCell.h */,
+				33C9F56E16648C3E009341A5 /* KOTreeTableViewCell.m */,
+				33C9F56F16648C3E009341A5 /* KOTreeViewController.h */,
+				33C9F57016648C3E009341A5 /* KOTreeViewController.m */,
+			);
+			path = KOTree;
+			sourceTree = "<group>";
+		};
 		33D642A0165B777E0075481B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +516,7 @@
 		35CC59465526A468D3DA185F = {
 			isa = PBXGroup;
 			children = (
+				33C9F55C16648C3E009341A5 /* KOTree */,
 				33EC2E78165B83D70085EDC9 /* Source */,
 				33D6429F165B777E0075481B /* zipzap.xcodeproj */,
 				35CC5A1F1D18529E2BBA49C4 /* Products */,
@@ -639,6 +691,13 @@
 				33EC2FAD165B83D70085EDC9 /* logo_dropbox.png in Resources */,
 				33EC2FAE165B83D70085EDC9 /* logo_dropbox@2x.png in Resources */,
 				33F5966F165C94A100764C86 /* sourcer.bundle in Resources */,
+				33C9F57B16648C3E009341A5 /* copymove-cell-bg.png in Resources */,
+				33C9F57D16648C3E009341A5 /* item-counter.png in Resources */,
+				33C9F57E16648C3E009341A5 /* item-counter@2x.png in Resources */,
+				33C9F57F16648C3E009341A5 /* item-icon-folder-selected.png in Resources */,
+				33C9F58016648C3E009341A5 /* item-icon-folder-selected@2x.png in Resources */,
+				33C9F58116648C3E009341A5 /* item-icon-folder.png in Resources */,
+				33C9F58216648C3E009341A5 /* item-icon-folder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +755,9 @@
 				33EC2F8F165B83D70085EDC9 /* EGORefreshTableHeaderView.m in Sources */,
 				35CC52CC8C8DFAB1F18BD6F1 /* NSObject+Theand.m in Sources */,
 				35CC5D2464D7A46BDB7DCAE5 /* ZipHandler.m in Sources */,
+				33C9F58516648C3E009341A5 /* KOTreeItem.m in Sources */,
+				33C9F58616648C3E009341A5 /* KOTreeTableViewCell.m in Sources */,
+				33C9F58716648C3E009341A5 /* KOTreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
