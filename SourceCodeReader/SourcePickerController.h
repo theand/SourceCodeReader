@@ -7,7 +7,8 @@
 //
 
 @protocol SourcePickerDelegate
-- (void)sourceSelected:(NSString *)source parent:(UIPopoverController *) parentController ;
+- (void)sourceSelected:(NSString *)source parent:(UIPopoverController *) parentController;
+- (void)sampleSelected:(NSString *)source parent:(UIPopoverController *) parentController;
 @end
 
 

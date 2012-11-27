@@ -29,5 +29,6 @@
 - (IBAction)viewSourceList:(id)sender;
 - (IBAction)goDropbox:(id)sender;
 - (IBAction)viewProjectDirectory:(id)sender;
+- (IBAction)closeProjectDirectory:(id)sender;
 
 @end

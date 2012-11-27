@@ -75,7 +75,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (delegate != nil) {
         NSString *src = [sources objectAtIndex:indexPath.row];
-        [delegate sourceSelected:src parent:self.popOverController];
+        [delegate sampleSelected:src parent:self.popOverController];
     }
 }
 

@@ -38,6 +38,11 @@
                                             <action selector="viewProjectDirectory:" destination="2" id="Dey-8F-4K4"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Close Projects Window" id="ex4-ZJ-k4A">
+                                        <connections>
+                                            <action selector="closeProjectDirectory:" destination="2" id="k3l-oT-fw8"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -56,6 +61,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="closeProjectDirectory:"/>
                 <relationship kind="action" name="goDropbox:"/>
                 <relationship kind="action" name="viewProjectDirectory:"/>
                 <relationship kind="action" name="viewSourceList:"/>

@@ -12,6 +12,7 @@
 #import "ZipHandler.h"
 #import "KOTreeViewController.h"
 #import <zipzap/zipzap.h>
+#import "NSString+HTML.h"
 
 @interface ViewController () <SourcePickerDelegate, DZDocumentsPickerControllerDelegate>
 
@@ -115,6 +116,12 @@
     [projectPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
+- (IBAction)closeProjectDirectory:(id)sender {
+    if( projectPickerPopOverController != nil ){
+        [projectPickerPopOverController dismissPopoverAnimated:YES];
+    }
+}
+
 
 #pragma mark - DZDocumentsPickerControllerDelegate Methods
 
@@ -148,12 +155,17 @@
 #pragma mark sourceListPickerDelegate
 
 - (void)sourceSelected:(NSString *)source parent:(UIPopoverController *) parentController {
-    [self loadSourceFilePath:[self getSourcerBundlePath]
-                    filePath:[NSString stringWithFormat:@"sample_output/%@.html", source]];
+    [self loadSourceFilePath:[self getSourcerBundlePath] filePath:source];
 
     [parentController dismissPopoverAnimated:YES];
 }
 
+- (void)sampleSelected:(NSString *)source parent:(UIPopoverController *) parentController {
+    [self loadSampleSourceFilePath:[self getSourcerBundlePath]
+                    filePath:[NSString stringWithFormat:@"sample_output/%@.html", source]];
+
+    [parentController dismissPopoverAnimated:YES];
+}
 
 - (NSString *)getSourcerBundlePath {
     NSString *bundlePath = [
@@ -165,6 +177,47 @@
 
 
 - (void)loadSourceFilePath:(NSString *)rootPath filePath:(NSString *)sourcePath {
+    DebugLog(@"sourcePath: %@", sourcePath);
+
+    if( [ZipHandler fileExistsAtAbsolutePath:sourcePath] ){
+        DebugLog(@"File Exists : %@", sourcePath);
+    }else{
+        DebugLog(@"File Not Exists : %@", sourcePath);
+    }
+    NSMutableData *mergedData = [[NSMutableData alloc] init];
+
+    if( [ZipHandler fileExistsAtAbsolutePath:[rootPath stringByAppendingPathComponent:@"prefix.html"]] ){
+        DebugLog(@"File Exists : %@", [rootPath stringByAppendingPathComponent:@"prefix.html"]);
+    }else{
+        DebugLog(@"File Not Exists : %@", [rootPath stringByAppendingPathComponent:@"prefix.html"]);
+    }
+    NSData *prefix = [NSData dataWithContentsOfFile:[rootPath stringByAppendingPathComponent:@"prefix.html"]  ];
+
+    if( [ZipHandler fileExistsAtAbsolutePath:[rootPath stringByAppendingPathComponent:@"postfix.html"]] ){
+        DebugLog(@"File Exists : %@", [rootPath stringByAppendingPathComponent:@"postfix.html"]);
+    }else{
+        DebugLog(@"File Not Exists : %@", [rootPath stringByAppendingPathComponent:@"postfix.html"]);
+    }
+    NSData *postfix = [NSData dataWithContentsOfFile:[rootPath stringByAppendingPathComponent:@"postfix.html"]  ];
+    NSData *codeBody = [NSData dataWithContentsOfFile: sourcePath ];
+
+    NSString *codeString = [[NSString alloc] initWithData:codeBody encoding:NSUTF8StringEncoding];
+    NSString *encodedString = [codeString stringByEncodingHTMLEntities];
+    codeBody =  [encodedString dataUsingEncoding: NSUTF8StringEncoding];
+
+    [mergedData appendData:prefix];
+    [mergedData appendData:codeBody];
+    [mergedData appendData:postfix];
+
+    [mergedData writeToFile: [[ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"write.html"] atomically:YES];
+
+    [myWebView loadHTMLString:[[NSString alloc] initWithData:mergedData encoding:NSUTF8StringEncoding]
+               baseURL:[NSURL fileURLWithPath:[rootPath stringByAppendingPathComponent:@"/sample_output/"] ] ];
+    DebugLog(@"baseURL : %@", [NSURL fileURLWithPath:rootPath]);
+}
+
+
+- (void)loadSampleSourceFilePath:(NSString *)rootPath filePath:(NSString *)sourcePath {
     NSString *filePath = [rootPath stringByAppendingPathComponent:sourcePath];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:filePath];
@@ -172,9 +225,7 @@
     DebugLog(@"filePath: %@", filePath);
     DebugLog(@"fileExists: %@", fileExists ? @"YES" : @"NO");
     DebugLog(@"url: %@", url);
-
 }
-
 
 - (void)clearAllCache {
     DebugLog(@"");
