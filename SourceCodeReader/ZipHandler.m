@@ -11,8 +11,61 @@
 
 }
 
+
++ (NSString *)getDocumentsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
++(BOOL)fileExistsAtAbsolutePath:(NSString*)filename {
+    BOOL isDirectory;
+    BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory];
+
+    return fileExistsAtPath && !isDirectory;
+}
+
++(BOOL)directoryExistsAtAbsolutePath:(NSString*)filename {
+    BOOL isDirectory;
+    BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory];
+
+    return fileExistsAtPath && isDirectory;
+}
+
++ (void)ensureTargetDirectory:(NSString *)target {
+    NSError *theError = nil;
+    BOOL dirExists = [ZipHandler directoryExistsAtAbsolutePath:target];
+    if ( dirExists){
+        DebugLog(@"%@ already exists", target);
+    }else{
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if (![fm createDirectoryAtPath:target withIntermediateDirectories:YES attributes:nil error:&theError]){
+            DebugLog(@"ERROR!! in createDirectory : %@", theError.localizedDescription);
+        }else{
+            DebugLog(@"%@ created!", target);
+        }
+    }
+}
+
+
++ (void)ensureIntermediatePathOfFile:(NSString *)path {
+    NSMutableArray *components = [NSMutableArray arrayWithArray:[path pathComponents]];
+    if ([components count] <2){
+        DebugLog(@"no intermediate path for %@", path);
+        return;
+    }
+
+    DebugLog(@"getting containing folder for %@", path);
+    [components removeLastObject];
+    NSString *containingDirectory = [NSString pathWithComponents:components];
+    DebugLog(@"containgFolder: %@", containingDirectory);
+
+    [ZipHandler ensureTargetDirectory:containingDirectory];
+}
+
+
 + (NSString *)saveToImportDirectory:(NSData *)data extension:(NSString *)extension name:(NSString *)name {
-    NSString *documentsDirectory = [self getDocumentsPath];
+    NSString *documentsDirectory = [ZipHandler getDocumentsPath];
 
     //TODO - 같은 파일 있을 경우 처리
 
@@ -29,13 +82,13 @@
     //압축 파일의 이름으로 최상위 디렉토리를 생성.
     NSString *zipProjectName =[
             [
-                [self getDocumentsPath] stringByAppendingPathComponent:@"Project"
+                [ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"Project"
             ]
                 stringByAppendingPathComponent:[
                     [zipPath lastPathComponent] stringByDeletingPathExtension
                 ]
         ];
-    [self ensureTargetDirectory:zipProjectName];
+    [ZipHandler ensureTargetDirectory:zipProjectName];
 
     for (ZZArchiveEntry *entry in zipArchive.entries) {
         NSString *fileType = nil;
@@ -43,7 +96,7 @@
 
         if (entry.fileMode & S_IFDIR) {
             fileType = @"DIR";
-            [self ensureTargetDirectory:entryPath];
+            [ZipHandler ensureTargetDirectory:entryPath];
         } else if (entry.fileMode & S_IFREG) {
             fileType = @"REGULAR";
             if ( ! [ZipHandler saveRegularFileToProject:entry entryPath:entryPath] )
@@ -64,7 +117,7 @@
             //TODO 여기에 오는 애들 뭔지 모르겠다.
             fileType = @"What Is It!";
             if ([entry.fileName hasSuffix:@"/"] ){
-                [self ensureTargetDirectory:entryPath];
+                [ZipHandler ensureTargetDirectory:entryPath];
             }else{
             if ( ! [ZipHandler saveRegularFileToProject:entry entryPath:entryPath])
                 break;
@@ -75,7 +128,7 @@
 }
 
 + (BOOL)saveRegularFileToProject:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath {
-    [self ensureIntermediatePathOfFile:entryPath];\
+    [ZipHandler ensureIntermediatePathOfFile:entryPath];\
 
     NSFileManager *fm = [NSFileManager defaultManager];
     if (![fm createFileAtPath:entryPath contents:entry.data attributes:nil]) {

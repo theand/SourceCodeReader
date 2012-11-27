@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZipHandler.h"
 
 @interface AppDelegate () <DBSessionDelegate>
 
@@ -26,13 +27,13 @@
 
 #pragma mark - Documents/import Directory check
 - (void)checkImportDir {
-    NSString *importDirectory = [[self getDocumentsPath] stringByAppendingPathComponent:@"import"];
-    [self ensureTargetDirectory:importDirectory];
+    NSString *importDirectory = [[ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"import"];
+    [ZipHandler ensureTargetDirectory:importDirectory];
 }
 
 - (void)checkProjectDir {
-    NSString *projectDirectory = [[self getDocumentsPath] stringByAppendingPathComponent:@"Project"];
-    [self ensureTargetDirectory:projectDirectory];
+    NSString *projectDirectory = [[ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"Project"];
+    [ZipHandler ensureTargetDirectory:projectDirectory];
 }
 
 

@@ -74,7 +74,6 @@
 		35CC5117C3022BCB6D2792FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC5152323D2FEEE0A9624F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC585D525FB1E90CE823F2 /* Foundation.framework */; };
 		35CC51C69977800FB35460A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC51CCF2B247A59A1BA1A0 /* CoreGraphics.framework */; };
-		35CC52CC8C8DFAB1F18BD6F1 /* NSObject+Theand.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5C29B21D162CF4166262 /* NSObject+Theand.m */; };
 		35CC53874DE22C53E9DDC7BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CC5C716A595E16B7C0B750 /* MainStoryboard.storyboard */; };
 		35CC53BBD5A3BF6292214000 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC512DBDFA1B8AF2699F8C /* Security.framework */; };
 		35CC54B715203EC50DC733F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC58FDF5F4537A5FD462C3 /* ViewController.m */; };
@@ -233,8 +232,6 @@
 		35CC597B4D895C74E7B6BAAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		35CC5B115C916DCFDAD39304 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		35CC5C29B21D162CF4166262 /* NSObject+Theand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Theand.m"; sourceTree = "<group>"; };
-		35CC5C53FFE4CA981A0CB34B /* NSObject+Theand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Theand.h"; sourceTree = "<group>"; };
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
 		35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcePickerController.h; sourceTree = "<group>"; };
 		35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcePickerController.m; sourceTree = "<group>"; };
@@ -505,8 +502,6 @@
 				35CC58FDF5F4537A5FD462C3 /* ViewController.m */,
 				35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */,
 				35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */,
-				35CC5C53FFE4CA981A0CB34B /* NSObject+Theand.h */,
-				35CC5C29B21D162CF4166262 /* NSObject+Theand.m */,
 				35CC5561378DEBCBE84D2C3D /* ZipHandler.m */,
 				35CC57047A1CCD451A723B19 /* ZipHandler.h */,
 			);
@@ -753,7 +748,6 @@
 				33EC2F57165B83D70085EDC9 /* UIWebView+DZEN.m in Sources */,
 				33EC2F65165B83D70085EDC9 /* Reachability.m in Sources */,
 				33EC2F8F165B83D70085EDC9 /* EGORefreshTableHeaderView.m in Sources */,
-				35CC52CC8C8DFAB1F18BD6F1 /* NSObject+Theand.m in Sources */,
 				35CC5D2464D7A46BDB7DCAE5 /* ZipHandler.m in Sources */,
 				33C9F58516648C3E009341A5 /* KOTreeItem.m in Sources */,
 				33C9F58616648C3E009341A5 /* KOTreeTableViewCell.m in Sources */,

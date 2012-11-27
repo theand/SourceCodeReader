@@ -12,6 +12,16 @@
 
 @interface ZipHandler : NSObject
 
+
++ (NSString *)getDocumentsPath;
+
++ (BOOL)fileExistsAtAbsolutePath:(NSString *)filename;
++ (BOOL)directoryExistsAtAbsolutePath:(NSString *)filename;
+
++ (void)ensureTargetDirectory:(NSString *)target;
++ (void)ensureIntermediatePathOfFile:(NSString *)path;
+
+
 + (NSString *)saveToImportDirectory:(NSData *)data extension:(NSString *)extension name:(NSString *)name;
 + (void)extractToProjectFromZip:(NSString *)zipPath;
 + (BOOL)saveRegularFileToProject:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath;
