@@ -7,7 +7,7 @@
 //
 
 @protocol SourcePickerDelegate
-- (void)sourceSelected:(NSString *)source;
+- (void)sourceSelected:(NSString *)source parent:(UIPopoverController *) parentController ;
 @end
 
 
@@ -15,7 +15,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *sources;
-@property (nonatomic, assign) id<SourcePickerDelegate> delegate;
 
+@property (nonatomic, assign) id<SourcePickerDelegate> delegate;
+@property (nonatomic, strong) UIPopoverController *popOverController;
 
 @end

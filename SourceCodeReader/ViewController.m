@@ -77,6 +77,7 @@
         sourcePickerController = [[SourcePickerController alloc] initWithStyle:UITableViewStylePlain];
         sourcePickerController.delegate = self;
         sourcePickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:sourcePickerController];
+        sourcePickerController.popOverController = sourcePickerPopOverController;
     }
     [sourcePickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
@@ -94,6 +95,8 @@
         [dropboxPickerController setContentSizeForViewInPopover:CGSizeMake(600, 700)];
         dropboxPickerController.deviceType = DeviceTypeiPad;
         dropboxPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:dropboxPickerController];
+
+        dropboxPickerController.popOverController = dropboxPickerPopOverController;
     }
 
     [dropboxPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -104,7 +107,10 @@
     if (projectPickerController == nil) {
         projectPickerController = [[KOTreeViewController alloc] init];
         [projectPickerController setContentSizeForViewInPopover:CGSizeMake(700, 700)];
+        projectPickerController.delegate = self;
         projectPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:projectPickerController];
+
+        projectPickerController.popOverController = projectPickerPopOverController;
     }
     [projectPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
@@ -141,11 +147,11 @@
 
 #pragma mark sourceListPickerDelegate
 
-- (void)sourceSelected:(NSString *)source {
+- (void)sourceSelected:(NSString *)source parent:(UIPopoverController *) parentController {
     [self loadSourceFilePath:[self getSourcerBundlePath]
                     filePath:[NSString stringWithFormat:@"sample_output/%@.html", source]];
 
-    [sourcePickerPopOverController dismissPopoverAnimated:YES];
+    [parentController dismissPopoverAnimated:YES];
 }
 
 
