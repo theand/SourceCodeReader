@@ -16,6 +16,7 @@
 
 #import "DZCategories.h"
 
+#import "NSString+CountString.h"
 
 #endif
 

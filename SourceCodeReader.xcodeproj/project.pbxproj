@@ -80,6 +80,7 @@
 		35CC554309D619F16C051BB1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC5A45E1FA897EDF27EE9F /* QuartzCore.framework */; };
 		35CC55AF35F05034D4238F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC592EA67B0F5A4EA7638E /* InfoPlist.strings */; };
 		35CC57341BD0E36D59B22F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC565C05D466A77BCED885 /* UIKit.framework */; };
+		35CC580A645C585097D2A214 /* NSString+CountString.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC54A5D7FEAAD8529C0401 /* NSString+CountString.m */; };
 		35CC58F8F856833206BAC371 /* SourcePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */; };
 		35CC5ADFF1C0E69AA9D14D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CC580484B33F6D2D3F36C9 /* InfoPlist.strings */; };
 		35CC5B3E41665514ABB9F7BE /* SourceCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */; };
@@ -221,6 +222,7 @@
 		35CC52381D3A0BC49B647860 /* SourceCodeReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceCodeReaderTests.m; sourceTree = "<group>"; };
 		35CC53B2C2B3B7797FA08291 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		35CC546F25938546615138B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		35CC54A5D7FEAAD8529C0401 /* NSString+CountString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CountString.m"; sourceTree = "<group>"; };
 		35CC54E971F555BE0915BDE3 /* SourceCodeReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReaderTests-Info.plist"; sourceTree = "<group>"; };
 		35CC5561378DEBCBE84D2C3D /* ZipHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipHandler.m; sourceTree = "<group>"; };
 		35CC561E04322138729EAD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		35CC5D0A4853773E2A45992B /* SourceCodeReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SourceCodeReader-Info.plist"; sourceTree = "<group>"; };
 		35CC5DAD3A0FB919F9E71A62 /* SourcePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourcePickerController.h; sourceTree = "<group>"; };
 		35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourcePickerController.m; sourceTree = "<group>"; };
+		35CC5EF653189A830315C4D4 /* NSString+CountString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CountString.h"; sourceTree = "<group>"; };
 		35CC5F70ED11E668510B1401 /* SourceCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CC5F92FFC0684B42876047 /* SourceCodeReaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceCodeReaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -504,6 +507,8 @@
 				35CC5E5887976AE2D6CC3CCF /* SourcePickerController.m */,
 				35CC5561378DEBCBE84D2C3D /* ZipHandler.m */,
 				35CC57047A1CCD451A723B19 /* ZipHandler.h */,
+				35CC54A5D7FEAAD8529C0401 /* NSString+CountString.m */,
+				35CC5EF653189A830315C4D4 /* NSString+CountString.h */,
 			);
 			path = SourceCodeReader;
 			sourceTree = "<group>";
@@ -752,6 +757,7 @@
 				33C9F58516648C3E009341A5 /* KOTreeItem.m in Sources */,
 				33C9F58616648C3E009341A5 /* KOTreeTableViewCell.m in Sources */,
 				33C9F58716648C3E009341A5 /* KOTreeViewController.m in Sources */,
+				35CC580A645C585097D2A214 /* NSString+CountString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

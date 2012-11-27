@@ -14,6 +14,7 @@
 
 
 + (NSString *)getDocumentsPath;
++ (NSString *)getProjectPath;
 
 + (BOOL)fileExistsAtAbsolutePath:(NSString *)filename;
 + (BOOL)directoryExistsAtAbsolutePath:(NSString *)filename;

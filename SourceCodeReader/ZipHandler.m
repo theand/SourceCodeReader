@@ -18,6 +18,10 @@
     return documentsDirectory;
 }
 
++ (NSString *)getProjectPath {
+    return [[ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"Project"];
+}
+
 +(BOOL)fileExistsAtAbsolutePath:(NSString*)filename {
     BOOL isDirectory;
     BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory];
@@ -81,9 +85,7 @@
 
     //압축 파일의 이름으로 최상위 디렉토리를 생성.
     NSString *zipProjectName =[
-            [
-                [ZipHandler getDocumentsPath] stringByAppendingPathComponent:@"Project"
-            ]
+            [ZipHandler getProjectPath]
                 stringByAppendingPathComponent:[
                     [zipPath lastPathComponent] stringByDeletingPathExtension
                 ]
@@ -126,6 +128,7 @@
         DebugLog(@"filename : %@ - %d bytes - %o - %@", entry.fileName, entry.uncompressedSize, entry.fileMode, fileType);
     }
 }
+
 
 + (BOOL)saveRegularFileToProject:(ZZArchiveEntry *)entry entryPath:(NSString *)entryPath {
     [ZipHandler ensureIntermediatePathOfFile:entryPath];\

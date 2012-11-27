@@ -40,6 +40,7 @@
 
     [self clearAllCache];
 
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +91,7 @@
         dropboxPickerController.delegate = self;
         dropboxPickerController.availableServices = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:ServiceTypeDropbox], nil];
 
-        [dropboxPickerController setContentSizeForViewInPopover:CGSizeMake(400, 600)];
+        [dropboxPickerController setContentSizeForViewInPopover:CGSizeMake(600, 700)];
         dropboxPickerController.deviceType = DeviceTypeiPad;
         dropboxPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:dropboxPickerController];
     }
@@ -102,6 +103,7 @@
 - (IBAction)viewProjectDirectory:(id)sender {
     if (projectPickerController == nil) {
         projectPickerController = [[KOTreeViewController alloc] init];
+        [projectPickerController setContentSizeForViewInPopover:CGSizeMake(700, 700)];
         projectPickerPopOverController = [[UIPopoverController alloc] initWithContentViewController:projectPickerController];
     }
     [projectPickerPopOverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
