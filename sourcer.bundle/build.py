@@ -21,7 +21,7 @@ postfix = open("postfix.html", "r").read()
 
 for src in Maps.keys():
 	file = open("sample_output/%s.html"%Maps[src]["lang"], "w+")
-	total = prefix%Maps[src]["prism-type"] + escape(open("sample_source/%s"%src).read() ) + postfix
+	total = prefix + escape(open("sample_source/%s"%src).read() ) + postfix
 	file.write(total)
 	file.close()
 
