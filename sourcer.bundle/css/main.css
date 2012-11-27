@@ -21,7 +21,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    background: #F0F0F0;/* TODO from okadia */
+    background: black;/* TODO from okadia */
 }
 
 /*
@@ -47,8 +47,14 @@ body {
 
 pre[class*="language-"] {
     padding: 1em;
-    margin: 0em 0;
+    margin: 0;
 }
+p,
+pre {
+    padding: 0 1em;
+    margin: 0;
+}
+
 /*
 ol.lncode { margin: 15px 0; padding: 0 0 0 20px; background: #e8e8e8; border: 1px solid #ccc; line-height: 100%; font: normal 12px Courier, monospace; }
 ol.lncode li { margin: 0 0 0 20px; padding: 5px 10px 5px 10px; list-style: decimal-leading-zero; line-height: 100%; word-wrap: break-word; border-left: 1px solid #ccc; color: #999; background: #fff; }

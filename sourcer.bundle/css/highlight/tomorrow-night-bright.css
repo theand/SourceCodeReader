@@ -37,7 +37,7 @@ pre code {
   display: block;
   background: black;
   color: #eaeaea;
-  padding: 0.5em;
+  padding: 0;
 }
 
 pre .coffeescript .javascript,
